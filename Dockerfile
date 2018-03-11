@@ -12,7 +12,7 @@ RUN apt-get update \
 # download project and config path
     && cd ~ \
     && git clone https://github.com/andikleen/pmu-tools.git \
-    && git clone https://github.com/tonybeltramelli/pix2code.git \
+    && git clone https://github.com/sharpzhao/pix2code.git \
     && echo "export PATH=~/pmu-tools:$PATH" >> ~/.bashrc \
 # download dependencies
     && dpkg --print-architecture \
@@ -24,9 +24,8 @@ RUN apt-get update \
 # process project data
     && cd ~/pix2code/datasets \
     && zip -F pix2code_datasets.zip --out datasets.zip && unzip datasets.zip \
-    && cd ../model \
-    && ./build_datasets.py ../datasets/ios/all_data \
-    && ./convert_imgs_to_arrays.py ../datasets/ios/training_set ../datasets/ios/training_features \
-    && cd .. && mkdir bin \
-
-
+    && cd ~ \
+#    && cd ../model \
+#    && ./build_datasets.py ../datasets/ios/all_data \
+#    && ./convert_imgs_to_arrays.py ../datasets/ios/training_set ../datasets/ios/training_features \
+#    && cd .. && mkdir bin \
