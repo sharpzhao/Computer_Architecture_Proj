@@ -28,7 +28,7 @@ RUN apt-get update \
     && zip -F pix2code_datasets.zip --out datasets.zip && unzip datasets.zip \
     && cd ../bin \
     && cat parametersa* > pix2code.h5 \
-    && mkdir code && cp ../datasets/datasets/ios/all_data/A964B1B0-4E8B-4326-ABC0-F2F3A2730AB0.png ../test.png
+    && mkdir code && cp ../datasets/ios/all_data/A964B1B0-4E8B-4326-ABC0-F2F3A2730AB0.png ../test.png
 #    && cd ../model \
 #    && ./build_datasets.py ../datasets/ios/all_data \
 #    && ./convert_imgs_to_arrays.py ../datasets/ios/training_set ../datasets/ios/training_features \
